@@ -8,16 +8,15 @@ const Projects = () => {
     { image:"", title: "Restaurant", desc: "React + Bootstrap", link: "" },
     { image:calculator, title: "Calculator", desc: "HTML + CSS + JS", link: "https://sanjayssit05-cmyk.github.io/SIMPLE-CALCULATOR/" },
       ];
-
   return (
-    <section id="projects" className="p-5  text-white text-center">
-      <h2 className="mb-4">Projects</h2>
-
-      <div className="container align-content-md-center">
+    <section id="projects" className="p- text-white text-center">
+      <h2 className="mb-2">Projects</h2>
+      
+      <div className="container align-content-md-center ">
         <div className="row g-3">
           {projects.map((p, i) => (
             <div key={i} className="col-12 col-sm-6 col-md-4 col-lg-3">
-              <div className="card  shadow text-dark p-3 d-flex  flex-column h-100 w-100">
+              <div className="card  shadow text-dark p-3 d-flex  flex-column ">
                 
                 <img id="p.image"
                   src={p.image}
@@ -31,7 +30,6 @@ const Projects = () => {
 
                 <a
                   href={p.link}
-
 
                   className="btn btn-primary mt-auto"
                 >

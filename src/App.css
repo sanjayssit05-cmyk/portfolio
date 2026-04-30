@@ -218,7 +218,7 @@ text-shadow: 2px 2px 2px rgb(68, 23, 6);
   background: #0f172a;
   border: 1px solid;
   box-shadow: 3px 4px 4px white;
-  border-radius: 20%;
+  border-radius: 5%;
 }
 #projects{
   background: #0f172a;
@@ -232,7 +232,7 @@ text-shadow: 2px 2px 2px rgb(68, 23, 6);
 /* #contact-contain{
   box-shadow: 4px 3px 4px white;
 } */
-#contact-contain:hover{
+/* #contact-contain:hover{
   animation: rotate2d 2s infinite linear;
 }
  
@@ -248,7 +248,7 @@ text-shadow: 2px 2px 2px rgb(68, 23, 6);
   100%{
     transform: rotatey(360deg);
   }
-}
+} */
 @media (max-width:480px){
   #Nav-brand{
     font-size: 8px;
@@ -260,6 +260,7 @@ text-shadow: 2px 2px 2px rgb(68, 23, 6);
   }
 
 }
+
 #skills{
   height: 345vh;
 }
