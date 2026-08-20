@@ -1,11 +1,12 @@
+import Hospital from "../assets/Hospital.jpg"
 import calculator from "../assets/calculator.jpeg"
 const Projects = () => {
   const projects = [
-    { image:"", title: "E-Commerce", desc: "React + Node + MongoDB", link: "" },
-    { image:"", title: "Chat App", desc: "Socket.io + MERN", link: "" },
-    { image:"", title: "Food Delivery", desc: "React + Bootstrap", link: "" },
-    { image:"",title: "Education", desc: "HTML + Bootstrap + Css", link: "" },
-    { image:"", title: "Restaurant", desc: "React + Bootstrap", link: "" },
+    { image:"food", title: "Food Delivary App", desc: "React + Node + MongoDB", link: "https://food-delivery-lake-alpha.vercel.app/" },
+    { image:"Hospital", title: "Hospital Management System", desc: "React + Node + MongoDB", link: "https://hms-eight-mu.vercel.app/" },
+    { image:"EduWeb", title: "Education Web", desc: "HTML +css + Bootstrap + javaScript", link: "https://sanjayssit05-cmyk.github.io/EduLearn/" },
+    { image:"BMS",title: "BMS", desc: "React + Axios, API", link: "https://bms-react-six.vercel.app/" },
+    { image:"Banking", title: "Banking Banking Management system", desc: "HTML + CSS + Javascript", link: "https://sanjayssit05-cmyk.github.io/Bank/" },
     { image:calculator, title: "Calculator", desc: "HTML + CSS + JS", link: "https://sanjayssit05-cmyk.github.io/SIMPLE-CALCULATOR/" },
       ];
   return (

@@ -161,6 +161,7 @@ padding:10px 20px;
 #skills{
 background: #0f172a;
 text-shadow: 2px 2px 2px rgb(68, 23, 6);
+/* overflow-y: hidden; */
 }
 
 #card{
@@ -206,8 +207,8 @@ text-shadow: 2px 2px 2px rgb(68, 23, 6);
 }
 #about-sec{
  background: #0f172a;
-  /* height: 90vh; */
   text-align: justify;
+
 }
 #contact input,
 #contact textarea {
@@ -287,7 +288,7 @@ text-shadow: 2px 2px 2px rgb(68, 23, 6);
     /* width: 30px; */
     /* top: 40%; */
     /* background: linear-gradient(rgb(58, 2, 58),rgb(3, 3, 51)) */
-    background: radial-gradient(rgb(4, 37, 48) 50%,rgb(5, 5, 24) 50%);
+    /* background: radial-gradient(rgb(4, 37, 48) 50%,rgb(0, 0, 17) 50%); */
   }
   100%{
     /* transform: rotatey(360deg); */
@@ -307,4 +308,7 @@ a:hover{
 #p.image{
   height: 40px;
   width: 40px;
+}
+#home-sec{
+  
 }

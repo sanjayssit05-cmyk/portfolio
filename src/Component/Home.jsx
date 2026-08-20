@@ -35,6 +35,9 @@ const Home = () => {
     margin: "0 auto"
   }}
 >
+
+
+
   <img id="profile"
     src={profile}
     alt="profile"
@@ -45,6 +48,8 @@ const Home = () => {
     }}
   />
 </div>
+<video src=""></video>
+
         <h1 className="fw-bold">Hi, I'm Sanjay</h1>
 
         <h3 className="text-success mt-2">

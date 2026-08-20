@@ -23,7 +23,7 @@ const Contact = () => {
       alert("Please fill all fields");
       return;
     }
-
+    
     const text = `Hello, my name is ${formData.name} . emaile${formData.emaile}. are you web developer ${formData.message}`;
 
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
@@ -70,7 +70,6 @@ const Contact = () => {
                   onChange={handleChange}
                 />
               </Form.Group>
-
               <div id="form-btn" className="text-center">
                 <Button variant="success" onClick={handleWhatsApp}>
                   Send via WhatsApp 
@@ -82,6 +81,7 @@ const Contact = () => {
         </Row>
       </Container>
     </section>
+    
   );
 };
 

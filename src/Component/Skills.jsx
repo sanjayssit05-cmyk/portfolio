@@ -43,5 +43,4 @@ const Skills = () => {
     </section>
   );
 };
-
 export default Skills;
