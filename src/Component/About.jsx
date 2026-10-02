@@ -2,12 +2,14 @@ const About = () => {
   return (
     <section id="about-sec" className="p-5 text-white">
       <div className="container p-0 p-md-5">
-        <h2 className="text-center fw-bolder mb-4">About Me</h2>
+        <p className="eyebrow">A LITTLE INTRODUCTION</p>
+        <h2 className="fw-bolder mb-4">A bit about me<i>.</i></h2>
 
         <p className="about-text">
-          I am a MERN Stack Developer passionate about building responsive and scalable applications using modern technologies.
-          using tools about MongDB, Express.js, Node.js, React, JavaScript.
-          I am a passionate MERN Stack Developer with strong skills in MongoDB, Express.js, React, and Node.js. I enjoy building responsive, user-friendly, and scalable web applications. I have a solid foundation in JavaScript and modern web development practices. I am always eager to learn new technologies and improve my coding skills. I am looking for opportunities to contribute to real-world projects and grow as a developer.
+          I&apos;m a MERN stack developer who enjoys turning practical ideas into
+          responsive, easy-to-use web applications. I work across React,
+          JavaScript, Node.js, Express, and MongoDB, and I&apos;m always looking
+          for thoughtful ways to make a product feel simpler and work better.
         </p>
       </div>
     </section>

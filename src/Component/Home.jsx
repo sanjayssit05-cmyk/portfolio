@@ -1,81 +1,80 @@
-import { Image } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import profile from "../assets/profile2.png";
 import { useEffect, useState } from "react";
 
 const Home = () => {
-
-  const text = "MERN Stack Developer";
-  const [displayText, setDisplayText] = useState("");
-  const [index, setIndex] = useState(0);
+  const [currentTime, setCurrentTime] = useState(() => new Date());
+  const indiaTime = new Intl.DateTimeFormat("en-IN", {
+    timeZone: "Asia/Kolkata",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: true,
+  }).format(currentTime);
 
   useEffect(() => {
-    if (index < text.length) {
-      const timeout = setTimeout(() => {
-        setDisplayText(prev => prev + text[index]);
-        setIndex(index + 1);
-      }, 100);
-      return () => clearTimeout(timeout);
-    }
-  }, [index]);
+    const timer = window.setInterval(() => setCurrentTime(new Date()), 1000);
+    return () => window.clearInterval(timer);
+  }, []);
+
+  const handlePortraitMove = (event) => {
+    if (event.pointerType === "touch") return;
+
+    const bounds = event.currentTarget.getBoundingClientRect();
+    const horizontalPosition = (event.clientX - bounds.left) / bounds.width - 0.5;
+    const verticalPosition = (event.clientY - bounds.top) / bounds.height - 0.5;
+
+    event.currentTarget.style.setProperty("--portrait-rotate-x", `${verticalPosition * -8}deg`);
+    event.currentTarget.style.setProperty("--portrait-rotate-y", `${horizontalPosition * 8}deg`);
+  };
+
+  const resetPortrait = (event) => {
+    event.currentTarget.style.setProperty("--portrait-rotate-x", "0deg");
+    event.currentTarget.style.setProperty("--portrait-rotate-y", "0deg");
+  };
 
   return (
-    <section id="home-sec"
-      className="text-white d-flex align-items-center "
-      style={{
-        height: "90vh",
-      }}
-    >
-      <div className="container text-center">
-        <div
-  style={{
-    width: "285px",
-    height: "300px",
-    borderRadius: "50%",
-    overflow: "hidden",
-    margin: "0 auto"
-  }}
->
-
-
-
-  <img id="profile"
-    src={profile}
-    alt="profile"
-    style={{
-      width: "100%",
-      height: "145%",
-      objectFit: "cover"
-    }}
-  />
-</div>
-<video src=""></video>
-
-        <h1 className="fw-bold">Hi, I'm Sanjay</h1>
-
-        <h3 className="text-success mt-2">
-          {displayText}
-          <span className="blink">|</span>
-        </h3>
-
-        <p className="mt-3">
-          I build modern, responsive and scalable web applications.
-        </p>
-
+    <section id="home-sec" className="home-hero">
+      <div className="hero-grid" aria-hidden="true" />
+      <div className="container hero-layout">
+        <div className="hero-copy">
+          <p className="eyebrow"><span className="status-dot" /> AVAILABLE FOR OPPORTUNITIES</p>
+          <h1>MERN stack<br /><span>developer</span><i>.</i></h1>
+          <p className="hero-intro">
+            Hey, I&apos;m <strong>Sanjay</strong>. I build thoughtful digital experiences,
+            from the first pixel to the final API.
+          </p>
+          <div className="hero-actions">
+            <Link className="button-primary" to="/project">Explore my work <span aria-hidden="true">↗</span></Link>
+            <Link className="button-text" to="/contact">Let&apos;s talk <span aria-hidden="true">↗</span></Link>
+          </div>
+          <div className="hero-stack">
+            <span>SELECTED TOOLKIT</span>
+            <p>React <b>/</b> Node.js <b>/</b> MongoDB <b>/</b> JavaScript</p>
+          </div>
+        </div>
+        <div className="hero-visual">
+          <div className="portrait-frame" onPointerMove={handlePortraitMove} onPointerLeave={resetPortrait}>
+            <img src={profile} alt="Portrait of Sanjay" />
+            <span className="portrait-index">SANJAY / MERN STACK</span>
+          </div>
+          <div className="hero-sticker" aria-label="Based in India">
+            <span>BUILDING</span><strong>for the<br />better web</strong><i>✳</i>
+          </div>
+          <div className="hero-meta">
+            <p className="hero-caption">CREATIVE THINKING. CLEAN CODE.</p>
+            <p className="local-time">
+              <span className="status-dot" />
+              <span>LIVE IN INDIA</span>
+              <time dateTime={currentTime.toISOString()}>{indiaTime} IST</time>
+            </p>
+          </div>
+        </div>
       </div>
-
-      <style>
-        {`
-          .blink {
-            animation: blink 1s infinite;
-          }
-
-          @keyframes blink {
-            0%, 50%, 100% { opacity: 1; }
-            25%, 75% { opacity: 0; }
-          }
-        `}
-      </style>
-
+      <div className="hero-bottom container">
+        <span>PORTFOLIO / 2026</span>
+        <span>SCROLL TO EXPLORE <b aria-hidden="true">↓</b></span>
+      </div>
     </section>
   );
 };

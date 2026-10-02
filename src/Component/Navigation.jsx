@@ -5,13 +5,13 @@ const Navigation = () => {
   return (
     <Navbar id="Nav" variant="dark" expand="lg" sticky="top">
       <Container>
-        <Navbar.Brand id="Nav-brand" className="fw-bold fs-5 text-white alert-danger ">
-           Mern <br /> <span className=" fw-bolder fs-5"> stack Developer</span>
-        </Navbar.Brand>
-
-        <Navbar.Toggle />
-        <Navbar.Collapse>
-          <Nav className="ms-auto fw-bolder fs-6">
+        <Navbar.Brand id="Nav-brand" as={NavLink} to="/" className="brand-mark">
+          <span className="brand-monogram">S.</span>
+          <span className="brand-copy">Sanjay <small>MERN STACK DEVELOPER</small></span>
+        </Navbar.Brand>        
+        <Navbar.Toggle aria-controls="portfolio-navigation" />
+        <Navbar.Collapse id="portfolio-navigation">
+          <Nav className="ms-auto">
             <NavLink to="/" className="nav-link">Home</NavLink>
             <NavLink to="/about" className="nav-link">About</NavLink>
             <NavLink to="/skills" className="nav-link">Skills</NavLink>
