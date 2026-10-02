@@ -2,8 +2,14 @@ import { Link } from "react-router-dom";
 import profile from "../assets/profile2.png";
 import { useEffect, useState } from "react";
 
+const TITLE = "MERN stack developer";
+const FIRST_LINE_LENGTH = "MERN stack".length;
+
 const Home = () => {
   const [currentTime, setCurrentTime] = useState(() => new Date());
+  const [typedTitle, setTypedTitle] = useState(() =>
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches ? TITLE : ""
+  );
   const indiaTime = new Intl.DateTimeFormat("en-IN", {
     timeZone: "Asia/Kolkata",
     hour: "2-digit",
@@ -14,6 +20,22 @@ const Home = () => {
 
   useEffect(() => {
     const timer = window.setInterval(() => setCurrentTime(new Date()), 1000);
+    return () => window.clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return undefined;
+
+    let characterIndex = 0;
+    const timer = window.setInterval(() => {
+      characterIndex += 1;
+      setTypedTitle(TITLE.slice(0, characterIndex));
+
+      if (characterIndex >= TITLE.length) {
+        window.clearInterval(timer);
+      }
+    }, 95);
+
     return () => window.clearInterval(timer);
   }, []);
 
@@ -39,7 +61,22 @@ const Home = () => {
       <div className="container hero-layout">
         <div className="hero-copy">
           <p className="eyebrow"><span className="status-dot" /> AVAILABLE FOR OPPORTUNITIES</p>
-          <h1>MERN stack<br /><span>developer</span><i>.</i></h1>
+          <h1 aria-label="MERN stack developer">
+            <span
+              className={`typed-title${typedTitle.length <= FIRST_LINE_LENGTH ? " is-typing" : ""}`}
+              aria-hidden="true"
+            >
+              {typedTitle.slice(0, FIRST_LINE_LENGTH)}
+            </span>
+            <br />
+            <span
+              className={`typed-title${typedTitle.length > FIRST_LINE_LENGTH ? " is-typing" : ""}`}
+              aria-hidden="true"
+            >
+              {typedTitle.length > FIRST_LINE_LENGTH ? TITLE.slice(FIRST_LINE_LENGTH + 1, typedTitle.length) : ""}
+            </span>
+            <i>.</i>
+          </h1>
           <p className="hero-intro">
             Hey, I&apos;m <strong>Sanjay</strong>. I build thoughtful digital experiences,
             from the first pixel to the final API.
