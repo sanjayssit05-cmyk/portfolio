@@ -173,6 +173,14 @@ const Home = () => {
             <span>SELECTED TOOLKIT</span>
             <p>React <b>/</b> Node.js <b>/</b> MongoDB <b>/</b> JavaScript</p>
           </div>
+          <nav className="hero-socials" aria-label="Social profiles">
+            <a href="https://www.linkedin.com/in/sanjay-k-044367392" target="_blank" rel="noopener noreferrer" aria-label="Open Sanjay's LinkedIn profile">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 8.6H2.1V22h3.1V8.6ZM3.65 2a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 0 0 0-3.6ZM22 14.3c0-4-2.1-5.9-4.9-5.9a4.2 4.2 0 0 0-3.8 2.1V8.6h-3.1V22h3.1v-7.4c0-2 .4-3.9 2.8-3.9s2.4 2.2 2.4 4V22H22v-7.7Z" /></svg>
+            </a>
+            <a href="https://www.instagram.com/its_k_s.j/" target="_blank" rel="noopener noreferrer" aria-label="Open Sanjay's Instagram profile">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle className="social-icon-dot" cx="17.5" cy="6.7" r=".8" /></svg>
+            </a>
+          </nav>
         </div>
         <div className="hero-visual">
           <div className="portrait-frame" onPointerMove={handlePortraitMove} onPointerLeave={resetPortrait}>
