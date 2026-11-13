@@ -229,7 +229,7 @@ const Home = () => {
           aria-label="Sanjay's portfolio assistant"
         >
           <header className="portfolio-chat-header">
-            <span className="chat-avatar" aria-hidden="true">S.</span>
+            <span className="chat-avatar" aria-hidden="true">Ks</span>
             <span className="chat-header-copy">
               <strong>Portfolio assistant</strong>
               <small><span className="status-dot" /> Here to help</small>

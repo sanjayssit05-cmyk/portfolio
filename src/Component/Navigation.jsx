@@ -6,7 +6,7 @@ const Navigation = () => {
     <Navbar id="Nav" variant="dark" expand="lg" sticky="top">
       <Container>
         <Navbar.Brand id="Nav-brand" as={NavLink} to="/" className="brand-mark">
-          <span className="brand-monogram">S.</span>
+          <span className="brand-monogram">Ks</span>
           <span className="brand-copy">Sanjay <small>MERN STACK DEVELOPER</small></span>
         </Navbar.Brand>        
         <Navbar.Toggle aria-controls="portfolio-navigation" />
